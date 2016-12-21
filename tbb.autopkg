@@ -1,0 +1,128 @@
+
+configurations {
+	Toolset {
+		key : "PlatformToolset";
+        choices: { v140, v120, v110, v100 };
+    };
+}
+
+nuget {
+
+   nuspec {
+      id = tbb;
+      version : 9.103.0.0;
+      title:  Intel Thread Building Blocks;
+      authors: { Intel Corporation };
+      licenseUrl: "https://www.apache.org/licenses/LICENSE-2.0";
+      projectUrl: "https://www.threadingbuildingblocks.org";
+      requireLicenseAcceptance:false;
+      summary: "Intel® Threading Building Blocks (Intel® TBB) lets you easily write parallel C++ programs that take full advantage of multicore performance, that are portable and composable, and that have future-proof scalability.";
+	    copyright: Intel Corporation;
+      description: "Intel TBB for Visual Studio 2015 (v140)";
+      tags: { native };
+   };
+ 
+   files {
+
+      i1: {
+		    #destination = ${d_include}\serial\tbb;
+        "tbb\include\serial\tbb\*.h"
+      };
+
+      i2: {
+        #destination = ${d_include}\tbb;
+        "tbb\include\tbb\*.h"
+      };
+
+      i3: {
+        #destination = ${d_include}\tbb\compat;
+        "tbb\include\tbb\compat\*"
+      };
+
+      i4: {
+        #destination = ${d_include}\tbb\internal;
+        "tbb\include\tbb\internal\*.h"
+      };
+
+      i5: {
+        #destination = ${d_include}\tbb\machine;
+        "tbb\include\tbb\machine\*.h"
+      };
+
+      [x86,v140,release] {
+        lib: {
+          "tbb\lib\ia32\vc14\tbb.lib",
+          "tbb\lib\ia32\vc14\tbbmalloc.lib",
+          "tbb\lib\ia32\vc14\tbbmalloc_proxy.lib",
+          }
+        bin: {
+          "tbb\bin\ia32\vc14\tbb.dll",
+          "tbb\bin\ia32\vc14\tbbmalloc.dll",
+          "tbb\bin\ia32\vc14\tbbmalloc_proxy.dll",
+          }
+        symbols: {
+          "tbb\bin\ia32\vc14\tbb.pdb",
+          "tbb\bin\ia32\vc14\tbbmalloc.pdb",
+          "tbb\bin\ia32\vc14\tbbmalloc_proxy.pdb",
+          }
+      };
+ 
+      [x86,v140,debug] {
+         lib: {
+          "tbb\lib\ia32\vc14\tbb_debug.lib",
+          "tbb\lib\ia32\vc14\tbbmalloc_debug.lib",
+          "tbb\lib\ia32\vc14\tbbmalloc_proxy_debug.lib",
+          }
+        bin: {
+          "tbb\bin\ia32\vc14\tbb_debug.dll",
+          "tbb\bin\ia32\vc14\tbbmalloc_debug.dll",
+          "tbb\bin\ia32\vc14\tbbmalloc_proxy_debug.dll",
+          }
+        symbols: {
+          "tbb\bin\ia32\vc14\tbb_debug.pdb",
+          "tbb\bin\ia32\vc14\tbbmalloc_debug.pdb",
+          "tbb\bin\ia32\vc14\tbbmalloc_proxy_debug.pdb",
+          }
+      };
+
+      [x64,v140,release] {
+         lib: {
+          "tbb\lib\intel64\vc14\tbb.lib",
+          "tbb\lib\intel64\vc14\tbbmalloc.lib",
+          "tbb\lib\intel64\vc14\tbbmalloc_proxy.lib",
+          }
+        bin: {
+          "tbb\bin\intel64\vc14\tbb.dll",
+          "tbb\bin\intel64\vc14\tbbmalloc.dll",
+          "tbb\bin\intel64\vc14\tbbmalloc_proxy.dll",
+          }
+        symbols: {
+          "tbb\bin\intel64\vc14\tbb.pdb",
+          "tbb\bin\intel64\vc14\tbbmalloc.pdb",
+          "tbb\bin\intel64\vc14\tbbmalloc_proxy.pdb",
+          }          
+      };
+ 
+      [x64,v140,debug] {
+         lib: { 
+          "tbb\lib\intel64\vc14\tbb_debug.lib",
+          "tbb\lib\intel64\vc14\tbbmalloc_debug.lib",
+          "tbb\lib\intel64\vc14\tbbmalloc_proxy_debug.lib",
+          }
+        bin: {
+          "tbb\bin\intel64\vc14\tbb_debug.dll",
+          "tbb\bin\intel64\vc14\tbbmalloc_debug.dll",
+          "tbb\bin\intel64\vc14\tbbmalloc_proxy_debug.dll",
+          }
+        symbols: {
+          "tbb\bin\intel64\vc14\tbb_debug.pdb",
+          "tbb\bin\intel64\vc14\tbbmalloc_debug.pdb",
+          "tbb\bin\intel64\vc14\tbbmalloc_proxy_debug.pdb",
+          }          
+      };
+   };
+
+   targets {
+	  Defines += HAS_TBB;
+   };
+}
