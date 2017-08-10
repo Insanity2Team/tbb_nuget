@@ -2,7 +2,7 @@
 configurations {
 	Toolset {
 		key : "PlatformToolset";
-        choices: { v140, v120, v110, v100 };
+        choices: { v141, v140 };
     };
 }
 
@@ -10,7 +10,7 @@ nuget {
 
    nuspec {
       id = tbb;
-      version : 9.103.0.0;
+      version : 9.107.0.0;
       title:  Intel Thread Building Blocks;
       authors: { Intel Corporation };
       licenseUrl: "https://www.apache.org/licenses/LICENSE-2.0";
@@ -18,7 +18,7 @@ nuget {
       requireLicenseAcceptance:false;
       summary: "Intel® Threading Building Blocks (Intel® TBB) lets you easily write parallel C++ programs that take full advantage of multicore performance, that are portable and composable, and that have future-proof scalability.";
 	    copyright: Intel Corporation;
-      description: "Intel TBB for Visual Studio 2015 (v140)";
+      description: "Intel TBB for Visual Studio 2015 (v140) & Visual Studio 2017 (v141)";
       tags: { native };
    };
  
@@ -49,7 +49,7 @@ nuget {
         "tbb\include\tbb\machine\*.h"
       };
 
-      [x86,v140,release] {
+      [x86,release] {
         lib: {
           "tbb\lib\ia32\vc14\tbb.lib",
           "tbb\lib\ia32\vc14\tbbmalloc.lib",
@@ -67,7 +67,7 @@ nuget {
           }
       };
  
-      [x86,v140,debug] {
+      [x86,debug] {
          lib: {
           "tbb\lib\ia32\vc14\tbb_debug.lib",
           "tbb\lib\ia32\vc14\tbbmalloc_debug.lib",
@@ -85,7 +85,7 @@ nuget {
           }
       };
 
-      [x64,v140,release] {
+      [x64,release] {
          lib: {
           "tbb\lib\intel64\vc14\tbb.lib",
           "tbb\lib\intel64\vc14\tbbmalloc.lib",
@@ -103,7 +103,7 @@ nuget {
           }          
       };
  
-      [x64,v140,debug] {
+      [x64,debug] {
          lib: { 
           "tbb\lib\intel64\vc14\tbb_debug.lib",
           "tbb\lib\intel64\vc14\tbbmalloc_debug.lib",
