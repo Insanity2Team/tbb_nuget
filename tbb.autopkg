@@ -9,16 +9,16 @@ configurations {
 nuget {
 
    nuspec {
-      id = tbb;
+      id = tbb_oss;
       version : 9.107.0.0;
-      title:  Intel Thread Building Blocks;
+      title:  Intel Thread Building Blocks 2017 Update 7;
       authors: { Intel Corporation };
       licenseUrl: "https://www.apache.org/licenses/LICENSE-2.0";
       projectUrl: "https://www.threadingbuildingblocks.org";
       requireLicenseAcceptance:false;
       summary: "Intel® Threading Building Blocks (Intel® TBB) lets you easily write parallel C++ programs that take full advantage of multicore performance, that are portable and composable, and that have future-proof scalability.";
 	    copyright: Intel Corporation;
-      description: "Intel TBB for Visual Studio 2015 (v140) & Visual Studio 2017 (v141)";
+      description: "Intel TBB 2017 U7 for Visual Studio 2015 (v140) & Visual Studio 2017 (v141)";
       tags: { native };
    };
  
